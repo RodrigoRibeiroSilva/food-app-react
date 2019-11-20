@@ -3,21 +3,17 @@ import Restaurant from './Restaurant';
 
 class Restaurants extends React.Component {
     
-    constructor(props){
-        super(props)
-    }
-
     render(){
         return (
             <div>          
-                <section class="content-header">
+                <section className="content-header">
                     <h1>
                         Todos os Restaurantes
                     </h1>
                 </section>
                 
-                <section class="content">
-                    <div class="row">
+                <section className="content">
+                    <div className="row">
                         <Restaurant></Restaurant>
                         <Restaurant></Restaurant>
                         <Restaurant></Restaurant>
