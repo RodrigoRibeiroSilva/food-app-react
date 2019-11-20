@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from 'react-router-dom'
 
-function App() {
+import Restaurants from './components/restaurants/Restaurants';
+import Header from './components/Header';
+import Home from './components/Home';
+import './App.css'
+
+
+
+class App extends React.Component  {
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+     <div class="wrapper">
+            <Header></Header>
+            <div class="content-wrapper bg-img">
+              <div class="container">
+                <Switch>
+                    <Route exact path="/restaurants" component={Restaurants} />
+                    <Route exact path="/home" component={Home} />
+                </Switch>
+              </div>
+            </div>
+            <footer class="main-footer">
+              <div class="container">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 1.0.0
+                </div>
+                <strong>FOOD</strong> Angular Application
+              </div>
+            </footer>
+        </div>
+      )
+  }
 }
 
 export default App;
