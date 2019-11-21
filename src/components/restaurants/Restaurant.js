@@ -8,11 +8,10 @@ class Restaurant extends React.Component {
       
     }
 
-    render(){
-      let path = "/restaurant-detail/" + this.props.id
+    render(){    
         return (        
               <div className="col-sm-6 col-xs-12">
-                    <Link to={path} >
+                    <Link to={`/restaurant-detail/${this.props.id}`} >
                       <div className="place-info-box">
                         <span className="place-info-box-icon"><img src={process.env.PUBLIC_URL + '/restaurants/' + this.props.image}  alt=""/></span>
 

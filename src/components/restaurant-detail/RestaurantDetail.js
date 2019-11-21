@@ -2,7 +2,8 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import { FOOD_API } from '../../api/Api'
-import '../app/App.css'
+import '../../App.css'
+
 
 class RestaurantDetail extends React.Component {
 
@@ -17,7 +18,7 @@ class RestaurantDetail extends React.Component {
 
     componentDidMount(){
         let id = this.props.match.params.id
-        console.log(`${FOOD_API}/restaurants/${id}`)
+
         fetch(`${FOOD_API}/restaurants/${id}`)
           .then(res => res.json())
           .then(
@@ -42,6 +43,8 @@ class RestaurantDetail extends React.Component {
         
         if (error) {
             return <div>Error: {error.message}</div>;
+        }else if(!isLoaded){
+            return <div>Loading...</div>;
         }
         else {
             return (
@@ -57,20 +60,19 @@ class RestaurantDetail extends React.Component {
                                 <i class="fa fa-home"></i>
                                 <h3 class="box-title"> {restaurant.name}</h3><span class="pull-right"><i class="fa fa-star"></i> {restaurant.rating}</span>
                                 </div>
-                                <div class="box-body">
-                                
-                                <div class="col-sm-3 col-xs-12">
-                                    <img class="box-img-detail"/>
-                                </div>
+                                <div class="box-body">                               
+                                    <div class="col-sm-3 col-xs-12">
+                                        <img src={process.env.PUBLIC_URL + '/restaurants/' + restaurant.imagePath}  alt=""/>
+                                    </div>
 
-                                <dl class="col-sm-9 col-xs-12">
-                                    <dt>Categoria</dt>
-                                    <dd>{restaurant.category}</dd>
-                                    <dt>Quem somos</dt>
-                                    <dd>{restaurant.about}</dd>
-                                    <dt>Horários</dt>
-                                    <dd>{restaurant.hours}</dd>
-                                </dl>
+                                    <dl class="col-sm-9 col-xs-12">
+                                        <dt>Categoria</dt>
+                                        <dd>{restaurant.category}</dd>
+                                        <dt>Quem somos</dt>
+                                        <dd>{restaurant.about}</dd>
+                                        <dt>Horários</dt>
+                                        <dd>{restaurant.hours}</dd>
+                                    </dl>
                                 </div>
                                 <div class="box-footer detail-footer">
                                 <a class="pull-left" href="/menu"> Menu </a>
