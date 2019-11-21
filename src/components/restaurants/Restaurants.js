@@ -42,11 +42,14 @@ class Restaurants extends React.Component {
         let result = []
         this.state.restaurants.map((restaurant) => {
             result.push(<Restaurant
-                            image={restaurant.imagePath} 
-                            name={restaurant.name} 
-                            rating={restaurant.rating} 
+                            id={restaurant.id}
                             category={restaurant.category} 
-                            deliveryEstimate={restaurant.deliveryEstimate} >
+                            name={restaurant.name} 
+                            deliveryEstimate={restaurant.deliveryEstimate} 
+                            rating={restaurant.rating} 
+                            image={restaurant.imagePath}
+                            about={restaurant.about}
+                            hours={restaurant.hours}>
                         </Restaurant>)
         })
 
