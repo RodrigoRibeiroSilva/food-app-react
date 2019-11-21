@@ -1,5 +1,5 @@
 import React from 'react';
-
+import image from '../../assets/img/restaurants/tasty.png'
 class Restaurant extends React.Component {
 
     render(){
@@ -8,7 +8,7 @@ class Restaurant extends React.Component {
             <div className="col-sm-6 col-xs-12">
                   <a href="/restaurant">
                     <div className="place-info-box">
-                      <span className="place-info-box-icon"><img src={this.props.image} alt=""/></span>
+                      <span className="place-info-box-icon"><img src={process.env.PUBLIC_URL + '/restaurants/' + this.props.image}  alt=""/></span>
 
                       <div className="place-info-box-content">
                         <span className="place-info-box-text">{this.props.name}</span>
