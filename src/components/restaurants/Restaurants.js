@@ -61,7 +61,7 @@ class Restaurants extends React.Component {
             return <div>Loading...</div>;
         } else{
             return (
-            <div>          
+            <div className="container">          
                 <section className="content-header">
                     <h1>
                         Todos os Restaurantes

@@ -17,7 +17,7 @@ class Header extends React.Component {
                         <div className="collapse navbar-collapse pull-left" id="navbar-collapse">
                             <ul className="nav navbar-nav">
                                 <li className="active"><a href="/restaurants">Restaurantes <span className="sr-only">(current)</span></a></li>
-                                <li><a href="/Sobre">Sobre</a></li>
+                                <li><a href="/about">Sobre</a></li>
                             </ul>
                         </div>
                     </div>              
