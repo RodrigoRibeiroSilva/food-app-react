@@ -20,4 +20,4 @@ class Navigable extends React.Component{
     }
 }
 
-export default Navigable
+export default Navigable 
