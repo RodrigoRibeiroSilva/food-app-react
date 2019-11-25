@@ -50,22 +50,23 @@ class RestaurantDetail extends React.Component {
             return (
                 <div className="container">
                     <section class="content-header">
-                        <h1></h1>
+
                     </section>
-                    <section class="content">
-                        <div class="row">
-                            <div class="col-xs-12">
-                            <div class="box box-solid">
-                                <div class="box-header with-border">
-                                <i class="fa fa-home"></i>
-                                <h3 class="box-title"> {restaurant.name}</h3><span class="pull-right"><i class="fa fa-star"></i> {restaurant.rating}</span>
+                    <section className="content">
+                        <div className="row">
+                            <div className="col-xs-12">
+                            <div className="box box-solid">
+                                <div className="box-header with-border">
+                                <i className="fa fa-home"></i>
+                                <h3 className="box-title"> {restaurant.name}</h3><span class="pull-right"><i class="fa fa-star"></i> {restaurant.rating}</span>
                                 </div>
-                                <div class="box-body">                               
-                                    <div class="col-sm-3 col-xs-12">
-                                        <img src={process.env.PUBLIC_URL + '/restaurants/' + restaurant.imagePath}  alt=""/>
+                                <div className="box-body">                               
+                                    <div className="col-sm-3 col-xs-12">
+                                    <span className="place-info-box-icon"><img src={process.env.PUBLIC_URL + '/restaurants/' + restaurant.imagePath}   alt=""/></span>
+                                       
                                     </div>
 
-                                    <dl class="col-sm-9 col-xs-12">
+                                    <dl className="col-sm-9 col-xs-12">
                                         <dt>Categoria</dt>
                                         <dd>{restaurant.category}</dd>
                                         <dt>Quem somos</dt>
@@ -74,15 +75,15 @@ class RestaurantDetail extends React.Component {
                                         <dd>{restaurant.hours}</dd>
                                     </dl>
                                 </div>
-                                <div class="box-footer detail-footer">
-                                <a class="pull-left" href="/menu"> Menu </a>
-                                <a class="pull-right" href="/review"> Avaliações </a>
+                                <div className="box-footer detail-footer">
+                                <a className="pull-left" href="/menu"> Menu </a>
+                                <a className="pull-right" href="/review"> Avaliações </a>
                             </div>
                             </div>
                             </div>
                             
                         </div>
-                        <div class="row">
+                        <div className="row">
                             <Switch>
                                 <Route exact path="/menu"  />
                                 <Route exact path="/review" />

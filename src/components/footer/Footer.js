@@ -9,7 +9,7 @@ class Footer extends React.Component {
                     <div className="pull-right hidden-xs">
                         <b>Version</b> 1.0.0
                     </div>
-                    <strong>FOOD</strong> Angular Application
+                    <strong>FOOD</strong> ReactJS Application
                 </div>
             </footer>
         );

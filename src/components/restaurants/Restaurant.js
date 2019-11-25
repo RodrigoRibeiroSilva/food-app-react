@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom'
 
 class Restaurant extends React.Component {
 
-    constructor(props){
-      super(props)
-      
-    }
-
     render(){    
         return (        
               <div className="col-sm-6 col-xs-12">

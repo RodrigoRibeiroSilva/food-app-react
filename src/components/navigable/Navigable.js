@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
 import Home from '../home/Home';
 import Restaurants from '../restaurants/Restaurants';
@@ -12,12 +12,14 @@ class Navigable extends React.Component{
         return (
             <div className="content-wrapper bg-img">
                 <div className="container">
+                <BrowserRouter>
                   <Switch>
                       <Route exact path="/restaurants" component={Restaurants} />
                       <Route exact path="/home" component={Home} />
                       <Route exact path="/about" component={About} />
                       <Route exact path="/restaurant-detail/:id" component={RestaurantDetail} />
                   </Switch>
+                </BrowserRouter>
                 </div>
             </div>
         );

@@ -306,32 +306,6 @@ body {
     background-repeat: no-repeat; 
 }
 
-Skip to content
-Why GitHub? 
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-
-Sign in
-Sign up
-84787cod3rcursos/meat-app-template
- Code Issues 1 Pull requests 0 Projects 0 Security Insights
-Join GitHub today
-GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.
-
-meat-app-template/bootstrap/css/bootstrap.css
-@tarsobessa tarsobessa primeiro commit
-75a42c1 on Mar 20, 2017
-Executable File  6761 lines (6753 sloc)  143 KB
-  
-/*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
