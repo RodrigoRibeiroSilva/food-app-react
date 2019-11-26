@@ -12,6 +12,7 @@ class Navigable extends React.Component{
         return (
             <div className="content-wrapper bg-img">
                 <div className="container">
+
                 <BrowserRouter>
                   <Switch>
                       <Route exact path="/restaurants" component={Restaurant} />
@@ -20,6 +21,7 @@ class Navigable extends React.Component{
                       <Route exact path="/restaurant-detail/:id" component={RestaurantDetail} />
                   </Switch>
                 </BrowserRouter>
+                
                 </div>
             </div>
         );
