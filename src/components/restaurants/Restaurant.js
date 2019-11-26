@@ -1,27 +1,86 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
-class Restaurant extends React.Component {
+import { FOOD_API } from '../../api/Api'
+import RestaurantItem from './RestaurantItem';
 
-    render(){    
-        return (        
-              <div className="col-sm-6 col-xs-12">
-                    <Link to={`/restaurant-detail/${this.props.id}`} >
-                      <div className="place-info-box">
-                        <span className="place-info-box-icon"><img src={process.env.PUBLIC_URL + '/restaurants/' + this.props.image}  alt=""/></span>
+class Restaurants extends React.Component {
 
-                        <div className="place-info-box-content">
-                          <span className="place-info-box-text">{this.props.name}</span>
-                          <span className="place-info-box-star"><i class="fa fa-star"></i> {this.props.rating} </span>
-                          <span className="place-info-box-detail">{this.props.category}</span>
-                          <span className="place-info-box-detail">{this.props.deliveryEstimate}</span>
-                        </div>
-                      </div>
-                    </Link>               
-              </div>          
-        );
+    constructor(props) {
+        super(props);
+        this.state = {
+          error: null,
+          isLoaded: false,
+          restaurants: []
+        };
     }
-      
+
+    componentDidMount() {
+        this.getRestaurants();
+    }
+
+    getRestaurants(){
+        fetch(`${FOOD_API}/restaurants`)
+          .then(res => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                isLoaded: true,
+                restaurants: result
+                          
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+        )
+    }
+
+    renderRestaurants() {
+        let result = []
+        this.state.restaurants.map((restaurant) => {
+            result.push(<RestaurantItem
+                            id={restaurant.id}
+                            category={restaurant.category} 
+                            name={restaurant.name} 
+                            deliveryEstimate={restaurant.deliveryEstimate} 
+                            rating={restaurant.rating} 
+                            image={restaurant.imagePath}
+                            about={restaurant.about}
+                            hours={restaurant.hours}>
+                        </RestaurantItem>)
+        })
+
+        return result
+    }
+    
+    render(){
+        const { error, isLoaded } = this.state;
+        if (error) {
+            return <div>Error: {error.message}</div>;
+        }else if (!isLoaded) {
+            return <div>Loading...</div>;
+        } else{
+            return (
+            <div className="container">          
+                <section className="content-header">
+                    <h1>
+                        Todos os Restaurantes
+                    </h1>
+                </section>
+                
+                <section className="content">
+                    <div className="row">
+                        {this.renderRestaurants()}
+                    </div>
+                </section>
+            </div>                        
+            );  
+        }
+    }  
 }
 
-export default Restaurant
+
+export default Restaurants

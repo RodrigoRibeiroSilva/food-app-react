@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
+import Menu from '../menu/Menu'
 import { FOOD_API } from '../../api/Api'
 import '../../App.css'
 
@@ -12,11 +13,16 @@ class RestaurantDetail extends React.Component {
         this.state = {
           error: null,
           isLoaded: false,
-          restaurant: ""
+          restaurant: "",
+          menu: []
         };
     }
 
     componentDidMount(){
+       this.getRestaurantById()      
+    }
+
+    getRestaurantById(){
         let id = this.props.match.params.id
 
         fetch(`${FOOD_API}/restaurants/${id}`)
@@ -35,7 +41,6 @@ class RestaurantDetail extends React.Component {
               });
             }
         )
-       
     }
 
     render(){
@@ -84,10 +89,7 @@ class RestaurantDetail extends React.Component {
                             
                         </div>
                         <div className="row">
-                            <Switch>
-                                <Route exact path="/menu"  />
-                                <Route exact path="/review" />
-                            </Switch>
+                           <Menu id={restaurant.id}></Menu>
                         </div>
                     </section>
                 </div>

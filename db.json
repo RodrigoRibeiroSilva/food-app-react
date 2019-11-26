@@ -64,7 +64,7 @@
   "menu": [
     {
       "id": "cup-cake",
-      "imagePath": "assets/img/foods/cupcake.png",
+      "imagePath": "/foods/cupcake.png",
       "name": "Cup Cake",
       "description": "Cup Cake recheado de Doce de Leite",
       "price": 8.7,
@@ -72,7 +72,7 @@
     },
     {
       "id": "donut",
-      "imagePath": "assets/img/foods/donut.png",
+      "imagePath": "/foods/donut.png",
       "name": "Donut",
       "description": "Coberto com chantilly",
       "price": 2.5,
@@ -80,7 +80,7 @@
     },
     {
       "id": "bread",
-      "imagePath": "assets/img/foods/bread.png",
+      "imagePath": "/foods/bread.png",
       "name": "Pão Artesanal Italiano",
       "description": "Pão artesanal com queijos italianos",
       "price": 15.9,
@@ -88,7 +88,7 @@
     },
     {
       "id": "burger",
-      "imagePath": "assets/img/foods/burger.png",
+      "imagePath": "/foods/burger.png",
       "name": "Classic Burger",
       "description": "O clássico. Não tem como errar.",
       "price": 18.5,
@@ -96,15 +96,15 @@
     },
     {
       "id": "fries",
-      "imagePath": "assets/img/foods/fries.png",
+      "imagePath": "/foods/fries.png",
       "name": "Batatas Fritas",
       "description": "Batatas fritas crocantes",
       "price": 5.5,
       "restaurantId": "burger-house"
     },
     {
-      "id": "coke.png",
-      "imagePath": "assets/img/foods/coke.png",
+      "id": "coke",
+      "imagePath": "/foods/coke.png",
       "name": "Refrigerante",
       "description": "O refri mais gelado da cidade.",
       "price": 4.5,
@@ -112,7 +112,7 @@
     },
     {
       "id": "capp",
-      "imagePath": "assets/img/foods/capp.png",
+      "imagePath": "/foods/capp.png",
       "name": "Cappuccino com Chantilly",
       "description": "Tradicional cappuccino com chantilly",
       "price": 9.9,
@@ -120,7 +120,7 @@
     },
     {
       "id": "espreso",
-      "imagePath": "assets/img/foods/espreso.png",
+      "imagePath": "/foods/espreso.png",
       "name": "Super Espreso",
       "description": "Café espresso duplo. ",
       "price": 12.5,
@@ -128,7 +128,7 @@
     },
     {
       "id": "starb",
-      "imagePath": "assets/img/foods/starb.png",
+      "imagePath": "/foods/starb.png",
       "name": "Starbucks Copycat",
       "description": "O mais pedido da casa. O verdadeiro café americano pura água.",
       "price": 15.6,
@@ -136,7 +136,7 @@
     },
     {
       "id": "zlasagna",
-      "imagePath": "assets/img/foods/zlasagna.png",
+      "imagePath": "/foods/zlasagna.png",
       "name": "Lasagna de Zucchini",
       "description": "Lasagna deliciosa que se salva por causa do queijo",
       "price": 14.9,
@@ -144,7 +144,7 @@
     },
     {
       "id": "greensandwich",
-      "imagePath": "assets/img/foods/greensandwich.png",
+      "imagePath": "/foods/greensandwich.png",
       "name": "Sanduíche de Frango",
       "description": "Frango grelhado e salada",
       "price": 10.5,
@@ -152,7 +152,7 @@
     },
     {
       "id": "ceasar",
-      "imagePath": "assets/img/foods/ceasar.png",
+      "imagePath": "/foods/ceasar.png",
       "name": "Salada Ceasar",
       "description": "Clássica salada ceasar.",
       "price": 33.9,
@@ -160,7 +160,7 @@
     },
     {
       "id": "sunday",
-      "imagePath": "assets/img/foods/sunday.png",
+      "imagePath": "/foods/sunday.png",
       "name": "Mega Sunday",
       "description": "Sunday com várias bolas de sorvete a sua escolha",
       "price": 21.5,
@@ -168,15 +168,15 @@
     },
     {
       "id": "chocpop",
-      "imagePath": "assets/img/foods/chocpop.png",
+      "imagePath": "/foods/chocpop.png",
       "name": "Picolé de Brigadeiro",
       "description": "Picolé de brigadeiro recheado com côco.",
       "price": 8.5,
       "restaurantId": "ice-cream"
     },
     {
-      "id": "icestd.png",
-      "imagePath": "assets/img/foods/icestd.png",
+      "id": "icestd",
+      "imagePath": "/foods/icestd.png",
       "name": "Sorvete Simples",
       "description": "Clássico sorvete de rua onde todos os sabores são idênticos.",
       "price": 1.5,
@@ -184,7 +184,7 @@
     },
     {
       "id": "cup",
-      "imagePath": "assets/img/foods/cup.png",
+      "imagePath": "/foods/cup.png",
       "name": "Cup Cake de Choc. Branco",
       "description": "Cup Cake de chocolate branco",
       "price": 5.5,
@@ -192,7 +192,7 @@
     },
     {
       "id": "straw",
-      "imagePath": "assets/img/foods/straw.png",
+      "imagePath": "/foods/straw.png",
       "name": "Bolo de Morango",
       "description": "Bolo recheado e coberto com morangos",
       "price": 40.5,
@@ -200,7 +200,7 @@
     },
     {
       "id": "cake",
-      "imagePath": "assets/img/foods/cake.png",
+      "imagePath": "/foods/cake.png",
       "name": "Fatia de Bolo",
       "description": "Fatia de bolo de morango",
       "price": 5.9,
