@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch, BrowserRouter, Link } from 'react-router-dom'
 
 import Menu from '../menu/Menu'
+import Review from '../review/Review'
 import { FOOD_API } from '../../api/Api'
 import '../../App.css'
 
@@ -91,12 +92,12 @@ class RestaurantDetail extends React.Component {
                             </div>
                             <div className="row">
                                 <Switch>
-                                    <Route path="/menu"> 
+                                    <Route exact path="/menu"> 
                                         <Menu id={restaurant.id}></Menu>
                                     </Route>
 
-                                    <Route path="/review"> 
-                                        
+                                    <Route exact path="/review"> 
+                                        <Review id={restaurant.id}></Review>
                                     </Route>
                                 </Switch>                      
                             </div>

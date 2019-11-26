@@ -32,7 +32,7 @@ class Menu extends React.Component {
           },
           (error) => {
             this.setState({
-              isLoaded: true,
+              isLoaded: false,
               error
             });
           }
