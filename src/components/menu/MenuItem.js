@@ -4,16 +4,16 @@ class MenuItem extends React.Component {
 
     render(){
         return (
-           <div class="menu-item-info-box">
-                <span class="menu-item-info-box-icon">
+           <div className="menu-item-info-box">
+                <span className="menu-item-info-box-icon">
                     <img src={process.env.PUBLIC_URL  +  this.props.imagePath}  alt=""></img>
                 </span>
-                <div class="menu-item-info-box-content">
-                    <span class="menu-item-info-box-text">{this.props.name}</span>
-                    <span class="menu-item-info-box-detail">{this.props.description}</span>
-                    <span class="menu-item-info-box-price">{this.props.price}</span>
-                    <a class="">
-                        <i class="fa fa-plus-circle"></i> Adicionar
+                <div className="menu-item-info-box-content">
+                    <span className="menu-item-info-box-text">{this.props.name}</span>
+                    <span className="menu-item-info-box-detail">{this.props.description}</span>
+                    <span className="menu-item-info-box-price">{this.props.price}</span>
+                    <a className="">
+                        <i className="fa fa-plus-circle"></i> Adicionar
                     </a>
                 </div>
             </div>

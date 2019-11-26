@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, BrowserRouter, Link } from 'react-router-dom'
 
 import Menu from '../menu/Menu'
 import { FOOD_API } from '../../api/Api'
@@ -53,46 +53,56 @@ class RestaurantDetail extends React.Component {
         }
         else {
             return (
-                <div className="container">
-                    <section class="content-header">
+                <BrowserRouter>
+                    <div className="container">
+                        <section class="content-header">
 
-                    </section>
-                    <section className="content">
-                        <div className="row">
-                            <div className="col-xs-12">
-                            <div className="box box-solid">
-                                <div className="box-header with-border">
-                                <i className="fa fa-home"></i>
-                                <h3 className="box-title"> {restaurant.name}</h3><span class="pull-right"><i class="fa fa-star"></i> {restaurant.rating}</span>
-                                </div>
-                                <div className="box-body">                               
-                                    <div className="col-sm-3 col-xs-12">
-                                    <span className="place-info-box-icon"><img src={process.env.PUBLIC_URL + '/restaurants/' + restaurant.imagePath}   alt=""/></span>
-                                       
+                        </section>
+                        <section className="content">
+                            <div className="row">
+                                <div className="col-xs-12">
+                                    <div className="box box-solid">
+                                        <div className="box-header with-border">
+                                        <i className="fa fa-home"></i>
+                                        <h3 className="box-title"> {restaurant.name}</h3><span class="pull-right"><i class="fa fa-star"></i> {restaurant.rating}</span>
+                                        </div>
+                                        <div className="box-body">                               
+                                            <div className="col-sm-3 col-xs-12">
+                                            <span className="place-info-box-icon"><img src={process.env.PUBLIC_URL + '/restaurants/' + restaurant.imagePath}   alt=""/></span>
+                                            
+                                            </div>
+
+                                            <dl className="col-sm-9 col-xs-12">
+                                                <dt>Categoria</dt>
+                                                <dd>{restaurant.category}</dd>
+                                                <dt>Quem somos</dt>
+                                                <dd>{restaurant.about}</dd>
+                                                <dt>Horários</dt>
+                                                <dd>{restaurant.hours}</dd>
+                                            </dl>
+                                        </div>
+                                        <div className="box-footer detail-footer">
+                                            <Link className="pull-left" to="/menu">Menu</Link>
+                                            <Link className="pull-right" to="/review">Avaliações</Link>
+                                        </div>
                                     </div>
-
-                                    <dl className="col-sm-9 col-xs-12">
-                                        <dt>Categoria</dt>
-                                        <dd>{restaurant.category}</dd>
-                                        <dt>Quem somos</dt>
-                                        <dd>{restaurant.about}</dd>
-                                        <dt>Horários</dt>
-                                        <dd>{restaurant.hours}</dd>
-                                    </dl>
                                 </div>
-                                <div className="box-footer detail-footer">
-                                <a className="pull-left" href="/menu"> Menu </a>
-                                <a className="pull-right" href="/review"> Avaliações </a>
+                                
                             </div>
+                            <div className="row">
+                                <Switch>
+                                    <Route path="/menu"> 
+                                        <Menu id={restaurant.id}></Menu>
+                                    </Route>
+
+                                    <Route path="/review"> 
+                                        
+                                    </Route>
+                                </Switch>                      
                             </div>
-                            </div>
-                            
-                        </div>
-                        <div className="row">
-                           <Menu id={restaurant.id}></Menu>
-                        </div>
-                    </section>
-                </div>
+                        </section>
+                    </div>
+                </BrowserRouter>
             )
         }
     }

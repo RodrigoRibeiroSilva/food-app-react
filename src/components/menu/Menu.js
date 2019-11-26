@@ -65,12 +65,12 @@ class Menu extends React.Component {
         } else{
             return (
                 <div className="container">  
-                    <div class="col-md-9 col-xs-12">
-                        <div class="menu-item-info-box"> 
+                    <div className="col-md-9 col-xs-12">
+                        <div className="menu-item-info-box"> 
                             {this.renderMenu()}
                         </div>
                     </div>
-                    <div class="col-md-3 col-xs-12">
+                    <div className="col-md-3 col-xs-12">
 
                     </div>
                 </div>
