@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MenuItem from '../menu/MenuItem'
+import ShoppingCart from '../shopping-cart/ShoppingCart';
 import { FOOD_API } from '../../api/Api'
 
 class Menu extends React.Component {
@@ -9,7 +10,7 @@ class Menu extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            menu: []       
+            menu: [],    
         }
     }
 
@@ -49,11 +50,16 @@ class Menu extends React.Component {
                             name={menu.name} 
                             description={menu.description} 
                             price={menu.price} 
-                            restaurantId={menu.restaurantId}>
+                            restaurantId={menu.restaurantId}
+                            handleClick={this.handleMenuItem.bind(this)}>
                         </MenuItem>)
         })
 
         return result
+    }
+
+    handleMenuItem(props){
+       
     }
 
     render(){
@@ -71,7 +77,7 @@ class Menu extends React.Component {
                         </div>
                     </div>
                     <div className="col-md-3 col-xs-12">
-
+                        <ShoppingCart handleClick={this.handleMenuItem.bind(this)}/>
                     </div>
                 </div>
             );
