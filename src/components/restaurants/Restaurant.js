@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { FOOD_API } from '../../api/Api'
 import RestaurantItem from './RestaurantItem';
+import { FOOD_API } from '../../api/Api'
 
 class Restaurants extends React.Component {
 

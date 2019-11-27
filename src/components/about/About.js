@@ -1,8 +1,6 @@
 import React from 'react'
 
-class About extends React.Component {
-
-    render(){
+const About = () => {
         return (
             <div className="container">
                 <section class="content-header">
@@ -22,8 +20,8 @@ class About extends React.Component {
                     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
                 </section>
             </div>
-        )
-    }
-}
+        );
+};
+
 
 export default About
