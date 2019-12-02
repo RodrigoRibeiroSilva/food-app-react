@@ -50,17 +50,13 @@ class Menu extends React.Component {
                             name={menu.name} 
                             description={menu.description} 
                             price={menu.price} 
-                            restaurantId={menu.restaurantId}
-                            handleClick={this.handleMenuItem.bind(this)}>
+                            restaurantId={menu.restaurantId}>
                         </MenuItem>)
         })
 
         return result
     }
 
-    handleMenuItem(props){
-       
-    }
 
     render(){
         const { error, isLoaded } = this.state;
@@ -77,7 +73,7 @@ class Menu extends React.Component {
                         </div>
                     </div>
                     <div className="col-md-3 col-xs-12">
-                        <ShoppingCart handleClick={this.handleMenuItem.bind(this)}/>
+                        <ShoppingCart/>
                     </div>
                 </div>
             );

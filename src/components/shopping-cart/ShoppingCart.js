@@ -1,70 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { clickValue } from '../../shoppingCartAction'
+
 
 class ShoppingCart extends React.Component {
 
-    constructor(props){
-        super(props)
-        this.state = {
-            items: [],
-        }
-    }
-
-    componentDidMount(){
-       this.setState({
-           items: this.props.handleClick
-       })
-
-       console.log('cheguei no shoppingcart')
-    }
-
-    total(){
-        return this.state.items
-        .map(item => item.value())
-        .reduce((prev, value) => prev + value, 0)
-    }
-
-    clear(){
-        this.setState({
-            items: []
-        })
-    }
-
-    addItem(item){
-        console.log(item)
-        let foundItem = this.state.items.find(cartItem => cartItem.id === item.id)
-        if(foundItem){
-            this.increaseQty(foundItem)
-        }else{
-            this.setState({
-                items: this.state.items.push(foundItem)
-            })
-        }
-    }
-
-    removeItem(item){
-        this.setState({
-            items: this.state.items.splice(this.state.items.indexOf(item), 1)
-        })
-    }
-
-    increaseQty(item) {
-        item.quantity = item.quantity + 1
-    }
-
-    decreaseQty(item) {
-        item.quantity = item.quantity - 1
-        if(item.quantity === 0){
-            this.removeItem(item)
-        }
-    }
-
-    isEmpty(){
-        return (this.state.items.length > 0)
-    }
 
     renderCartItems(){
-        if(this.isEmpty){
+        if(false){
             return(
                 <div >
                     <p class="text-center">
@@ -88,7 +33,8 @@ class ShoppingCart extends React.Component {
                             </tr>
                             <tr>
                             <th>Total:</th>
-                            <td class="text-right">{ this.total() }</td>
+                            <td class="text-right"></td>
+                                {this.props.items}
                             </tr>  
                         </tbody>
                     </table>
@@ -120,4 +66,7 @@ class ShoppingCart extends React.Component {
     }
 }
 
-export default ShoppingCart
+ const mapStateToProps = (state) => ({items: state.shopppingCart.items})
+ 
+
+export default connect(mapStateToProps)(ShoppingCart) 
