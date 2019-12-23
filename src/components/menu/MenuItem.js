@@ -1,13 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { clickValue } from '../../shoppingCartAction'
+import { addItem } from '../../actions/index'
 
-
-class MenuItem extends React.Component {
-
-
-    render(){
+class MenuItem extends Component {
+    
+    render() {
         return (
             <div className="menu-item-info-box">
                 <span className="menu-item-info-box-icon">
@@ -17,7 +15,7 @@ class MenuItem extends React.Component {
                     <span className="menu-item-info-box-text">{this.props.name}</span>
                     <span className="menu-item-info-box-detail">{this.props.description}</span>
                     <span className="menu-item-info-box-price">{this.props.price}</span>
-                    <a className="" onClick={() => clickValue('B')}> 
+                    <a className="" onClick={() => this.props.addItem(this.props.name, this.props.price)}> 
                         <i className="fa fa-plus-circle" ></i> Adicionar
                     </a>
                 </div>
@@ -26,6 +24,6 @@ class MenuItem extends React.Component {
     }
 };
 
-const  mapDispatchToProps = (dispatch) => (bindActionCreators({clickValue}, dispatch))
+const mapDispatchToProps = dispatch => bindActionCreators({ addItem }, dispatch); 
 
-export default connect(mapDispatchToProps)(MenuItem)
+export default connect(null, mapDispatchToProps)(MenuItem)

@@ -14,10 +14,9 @@ class Menu extends React.Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getMenu()
     }
-
     
     getMenu(){
         let id = this.props.id
@@ -56,8 +55,7 @@ class Menu extends React.Component {
 
         return result
     }
-
-
+    
     render(){
         const { error, isLoaded } = this.state;
         if (error) {
