@@ -3,42 +3,59 @@ import { connect } from 'react-redux';
 
 class CartItems extends Component {
 
-  render() {
-    const { items, totalPrice } = this.props
+  removeCartItem() {
 
-    if(false) {
+  }
+
+  totalPrice() {
+    return this.props.items
+    .map(item => item.itemPrice)
+    .reduce((prev, value) => prev + value, 0)
+  }
+
+  render() {
+    const { items } = this.props
+
+    if(items.length === 0) {
       return(
         <div >
             <p class="text-center">
                 Seu Carrinho está vazio!
             </p>
         </div>
-    );
-    }else {
+      );
+    } else {    
       return(
-        <div class="table-responsive" >
-            <table class="table">
+        
+        <div className="table-responsive" >
+            <table className="table">
                 <tbody>
-                    <tr >
-                    <th></th>
-                    <td class="text-right"></td>
-                    <td class="text-right">
-                      
-                    </td>
-                    </tr>
+                    {items.map((item, index) => {
+                      return (
+                        <tr key={item.itemName + index}>
+                          <th>{`${item.quantity}x ${item.itemName}`}</th>
+                          <td className="text-right">{ item.itemPrice }</td>
+                          <td className="text-right">
+                            <a onClick={(e) => this.removeCartItem(e)} className="btn btn-sm danger">
+                                <i className="fa fa-remove"></i>Remover
+                            </a>
+                          </td>
+                        </tr>
+                      )
+                    })}
                     <tr>
                     <th>Total:</th>
-                    <td class="text-right"></td>
-                        {totalPrice}
+                    <td className="text-right"></td>
+                        {this.totalPrice()}
                     </tr>  
                 </tbody>
             </table>
         </div>
-    );
+      );
     }
   }
 }
 
-const mapStateToProps = store => ({items: store.shoppingCart.items}, {totalPrice: store.shoppingCart.totalPrice});
+const mapStateToProps = store => ({items: store.shoppingCart.items});
 
 export default connect(mapStateToProps)(CartItems);

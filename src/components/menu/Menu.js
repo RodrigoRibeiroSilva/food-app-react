@@ -44,6 +44,7 @@ class Menu extends React.Component {
         console.log(this.state.menu)
         this.state.menu.map((menu) => {
             result.push(<MenuItem
+                            key={menu.id}
                             id={menu.id}
                             imagePath={menu.imagePath} 
                             name={menu.name} 

@@ -42,6 +42,7 @@ class Restaurants extends React.Component {
         let result = []
         this.state.restaurants.map((restaurant) => {
             result.push(<RestaurantItem
+                            key={restaurant.id}
                             id={restaurant.id}
                             category={restaurant.category} 
                             name={restaurant.name} 

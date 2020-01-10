@@ -56,7 +56,7 @@ class RestaurantDetail extends React.Component {
             return (
                 <BrowserRouter>
                     <div className="container">
-                        <section class="content-header">
+                        <section className="content-header">
 
                         </section>
                         <section className="content">
@@ -65,7 +65,7 @@ class RestaurantDetail extends React.Component {
                                     <div className="box box-solid">
                                         <div className="box-header with-border">
                                         <i className="fa fa-home"></i>
-                                        <h3 className="box-title"> {restaurant.name}</h3><span class="pull-right"><i class="fa fa-star"></i> {restaurant.rating}</span>
+                                        <h3 className="box-title"> {restaurant.name}</h3><span className="pull-right"><i className="fa fa-star"></i> {restaurant.rating}</span>
                                         </div>
                                         <div className="box-body">                               
                                             <div className="col-sm-3 col-xs-12">

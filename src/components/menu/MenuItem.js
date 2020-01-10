@@ -4,6 +4,10 @@ import { bindActionCreators } from 'redux'
 import { addItem } from '../../actions/index'
 
 class MenuItem extends Component {
+
+    addCartItem() {
+        this.props.addItem(this.props.name, this.props.price)
+    }
     
     render() {
         return (
@@ -15,7 +19,7 @@ class MenuItem extends Component {
                     <span className="menu-item-info-box-text">{this.props.name}</span>
                     <span className="menu-item-info-box-detail">{this.props.description}</span>
                     <span className="menu-item-info-box-price">{this.props.price}</span>
-                    <a className="" onClick={() => this.props.addItem(this.props.name, this.props.price)}> 
+                    <a className="" onClick={(e) => this.addCartItem(e)}> 
                         <i className="fa fa-plus-circle" ></i> Adicionar
                     </a>
                 </div>

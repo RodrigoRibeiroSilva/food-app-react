@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 
 import CartItems from './CartItems'
 
@@ -8,18 +7,18 @@ class ShoppingCart extends React.Component {
 
     render(){
         return(
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-shopping-cart"></i>
-                        <h3 class="box-title">Carrinho</h3>
+                <div className="box box-solid">
+                    <div className="box-header">
+                        <i className="fa fa-shopping-cart"></i>
+                        <h3 className="box-title">Carrinho</h3>
                     </div>
-                    <div class="box-body">
+                    <div className="box-body">
                         <CartItems></CartItems>
                     </div>
-                    <div class="box-footer">
-                        <div class="pull-right">
-                            <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
-                            <Link to="/" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</Link>
+                    <div className="box-footer">
+                        <div className="pull-right">
+                            <button type="button" className="btn btn-danger"><i className="fa fa-trash"></i> Limpar</button>
+                            <Link to="/" className="btn btn-success"><i className="fa fa-credit-card"></i> Fechar Pedido</Link>
                         </div>
                     </div>
                 </div>
