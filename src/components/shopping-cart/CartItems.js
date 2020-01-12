@@ -3,30 +3,24 @@ import { connect } from 'react-redux';
 
 class CartItems extends Component {
 
+
   removeCartItem() {
 
   }
 
-  totalPrice() {
-    return this.props.items
-    .map(item => item.itemPrice)
-    .reduce((prev, value) => prev + value, 0)
-  }
-
   render() {
-    const { items } = this.props
+    const { items, totalPrice } = this.props
 
     if(items.length === 0) {
       return(
         <div >
-            <p class="text-center">
+            <p className="text-center">
                 Seu Carrinho está vazio!
             </p>
         </div>
       );
     } else {    
-      return(
-        
+      return(        
         <div className="table-responsive" >
             <table className="table">
                 <tbody>
@@ -43,11 +37,9 @@ class CartItems extends Component {
                         </tr>
                       )
                     })}
-                    <tr>
-                    <th>Total:</th>
-                    <td className="text-right"></td>
-                        {this.totalPrice()}
-                    </tr>  
+                    <tr><th>Total:</th>
+                    <td className="text-right">{totalPrice}</td>                 
+                   </tr>  
                 </tbody>
             </table>
         </div>
@@ -56,6 +48,6 @@ class CartItems extends Component {
   }
 }
 
-const mapStateToProps = store => ({items: store.shoppingCart.items});
+const mapStateToProps = store => (store.shoppingCart);
 
 export default connect(mapStateToProps)(CartItems);
